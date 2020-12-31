@@ -27,5 +27,5 @@ data = api.get_json()
 with open(outfile, 'w') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=structure.keys())
     writer.writeheader()
-    for row in data['data']:
+    for row in reversed(data['data']):
         writer.writerow(row)
